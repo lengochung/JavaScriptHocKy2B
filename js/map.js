@@ -71,13 +71,13 @@ const map = ( function () {
         },
         hienthiHuyen: function ( hienthi, tinh ) {
             hienthi.innerHTML = `<option value="">---</option>`;
-                for (const h of this.get().get(tinh).keys() ) {
+                for (const h of this.get().get(tinh.value).keys() ) {
                     hienthi.innerHTML += `<option value="${h}">${h}</option>`;
                 }
         },
         hienthiXa: function ( hienthi, tinh, huyen ) {
             hienthi.innerHTML = `<option value="">---</option>`;
-                for (const x of this.get().get(tinh).get(huyen).keys() ) {
+                for (const x of this.get().get(tinh.value).get(huyen.value).keys() ) {
                     hienthi.innerHTML += `<option value="${x}">${x}</option>`;
                 }
         }
