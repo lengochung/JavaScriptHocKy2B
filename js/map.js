@@ -71,28 +71,16 @@ const map = ( function () {
         },
         hienthiHuyen: function ( hienthi, tinh ) {
             hienthi.innerHTML = `<option value="">---</option>`;
-            for (const t of this.get().keys()) {
-                if ( tinh.value == t ) {
-                    for (const h of this.get().get(t).keys() ) {
-                        hienthi.innerHTML += `<option value="${h}">${h}</option>`;
-                    }
+                for (const h of this.get().get(tinh).keys() ) {
+                    hienthi.innerHTML += `<option value="${h}">${h}</option>`;
                 }
-            }
         },
         hienthiXa: function ( hienthi, tinh, huyen ) {
             hienthi.innerHTML = `<option value="">---</option>`;
-            for (const t of this.get().keys()) {
-                if ( tinh.value == t ) {
-                    for (const h of this.get().get(t).keys()) {
-                        if ( huyen.value == h) {
-                            for (const x of this.get().get(t).get(h).keys() ) {
-                                hienthi.innerHTML += `<option value="${x}">${x}</option>`;
-                            }
-                        }
-                    }
+                for (const x of this.get().get(tinh).get(huyen).keys() ) {
+                    hienthi.innerHTML += `<option value="${x}">${x}</option>`;
                 }
-            }
-        } 
+        }
     }
 })();
 // 
